@@ -1,13 +1,17 @@
-#define _GNU_SOURCE
-#include<stdio.h>
-#include<unistd.h>
-#include<sys/syscall.h>
-#include<sys/types.h>
-void main()
-{
-  printf("Thread id %ld\n",syscall(SYS_gettid));
-  printf("Process id %ld\n",syscall(SYS_getpid));
-  printf("Group id %ld\n",syscall(SYS_getgid));
-  printf("Parent process id %ld\n",syscall(SYS_getppid));
-  printf("User id %ld\n",syscall(SYS_getuid));
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+void main(){
+    pid_t childpid;
+    childpid=fork();
+    if(childpid==-1){
+      perror("Failed to fork");
+    }
+    if(childpid==0){
+     printf("I am child %ld\n", (long)getpid());
+    }
+    else{
+      printf("I am Parent %ld\n", (long)getpid());
+    }
 }

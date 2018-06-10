@@ -1,2 +1,0 @@
-sudo ifconfig (interface name) (flag)
-sudo ifconfig (interface name) (ip address)

@@ -4,4 +4,6 @@
 void main()
 {
   printf("Hello! \nFAIZAN YOUSAF  \n");
+  printf("Hello! \nFAIZAN YOUSAF  \n");
+  printf("Hello! \nFAIZAN YOUSAF  \n");
 }
